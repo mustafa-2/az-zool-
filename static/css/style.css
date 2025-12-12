@@ -1,0 +1,89 @@
+/* تنسيقات عامة */
+:root {
+    --sudan-green: #006233;
+    --sudan-red: #d21034;
+    --sudan-black: #000000;
+    --sudan-white: #ffffff;
+    --primary: var(--sudan-green);
+    --secondary: var(--sudan-red);
+}
+
+* {
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    line-height: 1.6;
+}
+
+/* شريط التنقل */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* أزرار */
+.btn-success {
+    background-color: var(--sudan-green);
+    border-color: var(--sudan-green);
+}
+
+.btn-success:hover {
+    background-color: #005126;
+    border-color: #005126;
+}
+
+/* بطاقات */
+.card {
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+/* العناوين */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+
+/* روابط */
+a {
+    text-decoration: none;
+    color: var(--sudan-green);
+}
+
+a:hover {
+    color: var(--sudan-red);
+}
+
+/* النتائج */
+.result-item {
+    border-right: 4px solid var(--sudan-green);
+    margin-bottom: 15px;
+}
+
+/* الفوتر */
+footer {
+    margin-top: auto;
+}
+
+/* تنسيقات النصوص العربية */
+.arabic-text {
+    text-align: right;
+    direction: rtl;
+}
+
+/* تحسين اللمس للجوال */
+@media (hover: none) {
+    .btn, a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,67 @@
+/* تنسيقات الجوال */
+@media (max-width: 768px) {
+    /* تحسين حجم الخطوط */
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.3rem; }
+    
+    /* تحسين الأزرار */
+    .btn {
+        padding: 12px;
+        font-size: 16px;
+    }
+    
+    /* تحسين البطاقات */
+    .card {
+        margin: 10px 0;
+    }
+    
+    /* تقليل الهوامش */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* تحسين شريط التنقل */
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    /* تحسين النماذج */
+    .form-control, .form-select {
+        font-size: 16px; /* منع التكبير في iOS */
+    }
+    
+    /* تحسين عرض النتائج */
+    .col-md-6, .col-lg-4 {
+        padding: 5px;
+    }
+}
+
+/* الوضع الداكن */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #ffffff;
+    }
+    
+    .card {
+        background-color: #1e1e1e;
+        color: #ffffff;
+    }
+    
+    .text-muted {
+        color: #adb5bd !important;
+    }
+}
+
+/* شاشات صغيرة جداً */
+@media (max-width: 576px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .lead {
+        font-size: 1rem;
+    }
+}

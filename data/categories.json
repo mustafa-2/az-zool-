@@ -1,0 +1,9 @@
+{
+  "categories": [
+    {"id": "real_estate", "name": "عقارات", "icon": "🏠"},
+    {"id": "vehicles", "name": "مركبات", "icon": "🚗"},
+    {"id": "electronics", "name": "إلكترونيات", "icon": "📱"},
+    {"id": "jobs", "name": "وظائف", "icon": "💼"},
+    {"id": "services", "name": "خدمات", "icon": "🔧"}
+  ]
+}

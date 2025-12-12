@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}نتائج البحث - الزول{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <h1 class="mb-3">
+        <i class="fas fa-search"></i>
+        نتائج البحث
+    </h1>
+    
+    {% if query %}
+    <div class="alert alert-info">
+        <strong>بحث عن:</strong> {{ query }}
+        {% if location %} | <strong>في:</strong> {{ location }}{% endif %}
+        <span class="badge bg-success ms-2">{{ count }} نتيجة</span>
+    </div>
+    {% endif %}
+</div>
+
+{% if results %}
+<div class="row">
+    {% for item in results %}
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <h5 class="card-title">{{ item.title }}</h5>
+                        <h6 class="card-subtitle mb-2 text-success">{{ item.price }}</h6>
+                    </div>
+                    <span class="badge bg-success">{{ item.category }}</span>
+                </div>
+                
+                <p class="card-text">
+                    <i class="fas fa-map-marker-alt text-muted"></i>
+                    {{ item.location }}
+                </p>
+                
+                <p class="card-text">{{ item.description }}</p>
+                
+                {% if item.features %}
+                <div class="mb-3">
+                    {% for key, value in item.features.items() %}
+                    <span class="badge bg-light text-dark me-1 mb-1">
+                        {{ key }}: {{ value }}
+                    </span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
+                <div class="d-flex justify-content-between">
+                    <a href="tel:{{ item.contact }}" class="btn btn-success btn-sm">
+                        <i class="fas fa-phone"></i> اتصل
+                    </a>
+                    <a href="{{ url_for('listing_detail', listing_id=item.id) }}" class="btn btn-outline-success btn-sm">
+                        التفاصيل
+                    </a>
+                </div>
+            </div>
+            <div class="card-footer text-muted small">
+                {{ item.date }} | {{ item.contact }}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="text-center py-5">
+    <div class="display-1 text-muted mb-3">🔍</div>
+    <h3>لم نجد نتائج لبحثك</h3>
+    <p class="lead">جرب استخدام كلمات بحث مختلفة أو ابحث في فئات أخرى</p>
+    <a href="{{ url_for('search') }}" class="btn btn-success btn-lg">
+        <i class="fas fa-redo"></i> بحث جديد
+    </a>
+</div>
+{% endif %}
+
+<div class="mt-4 text-center">
+    <a href="{{ url_for('home') }}" class="btn btn-outline-secondary">
+        <i class="fas fa-home"></i> العودة للرئيسية
+    </a>
+</div>
+{% endblock %}
