@@ -1,6 +1,22 @@
+
 venv/
 __pycache__/
 *.pyc
 .env
 *.log
+
+*.tar
+*.tar.*
+*.jar
+*.exe
+*.msi
+*.deb
+*.zip
+*.tgz
+*.log
+*.log.*
+*.sig
+
+7pkg/
+src/
 
